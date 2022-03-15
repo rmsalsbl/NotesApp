@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="args"
+            type="com.slowmotion.notesapp.fragment.update.updateFragmentArgs" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.update.UpdateFragment">
+
+        <EditText
+            android:id="@+id/et_uptitle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="@drawable/costum_input"
+            android:ems="10"
+            android:text="@{args.currentItem.title}"
+            android:inputType="textPersonName"
+            android:hint="@string/txt_title"
+            android:paddingStart="@dimen/_24dp"
+            android:paddingEnd="@dimen/_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <Spinner
+            android:id="@+id/sp_update"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:parsePriorityColor="@{args.currentItem.priority}"
+            android:entries="@array/priorities"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_uptitle"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <EditText
+            android:id="@+id/et_desc_update"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:hint="@string/txt_dsc"
+            android:text="@{args.currentItem.description}"
+            android:paddingStart="@dimen/_24dp"
+            android:paddingEnd="@dimen/_24dp"
+            android:paddingTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sp_update" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
