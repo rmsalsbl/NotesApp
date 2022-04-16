@@ -5,14 +5,14 @@
       <map>
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/drawable/costum_input.xml" value="0.1" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/drawable/item_background.xml" value="0.1" />
-        <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.10548523206751055" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/fragment_add.xml" value="0.1" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/fragment_list.xml" value="0.1" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/fragment_update.xml" value="0.1" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/layout/row_layout_item.xml" value="0.1" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/menu/add_fragment_menu.xml" value="0.11388888888888889" />
         <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/menu/list_fragment_menu.xml" value="0.1" />
-        <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/menu/update_fragment_menu.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/Salsabila/AndroidStudioProjects2/NotesApp/app/src/main/res/menu/update_fragment_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

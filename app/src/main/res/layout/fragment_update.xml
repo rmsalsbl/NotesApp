@@ -6,7 +6,7 @@
     <data>
         <variable
             name="args"
-            type="com.slowmotion.notesapp.fragment.update.updateFragmentArgs" />
+            type="com.slowmotion.notesapp.fragment.update.UpdateFragmentArgs" />
 
 
     </data>
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
-            android:parsePriorityColor="@{args.currentItem.priority}"
+            android:parsePriorityToInt="@{args.currentItem.priority}"
             android:entries="@array/priorities"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"

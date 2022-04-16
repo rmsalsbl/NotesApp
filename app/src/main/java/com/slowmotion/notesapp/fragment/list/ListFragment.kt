@@ -21,7 +21,7 @@ import com.slowmotion.notesapp.fragment.SharedViewModels
 import jp.wasabeef.recyclerview.animators.LandingAnimator
 
 
-class ListFragment : Fragment(), SearchView.OnQueryTextListener{
+class ListFragment : androidx.fragment.app.Fragment(), SearchView.OnQueryTextListener{
 
     private val mNoteViewModel : NoteViewModel by viewModels()
     private val adapter : listAdapter by lazy { listAdapter() }
@@ -130,7 +130,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener{
     }
 
     private fun searchThroughDatabase(query: String) {
-        val searchQuery = "$query"
+        val searchQuery = "%$query%"
         mNoteViewModel.searchDatabase(searchQuery).observe(
             this, {
                     list -> list.let { adapter.setData(it) }

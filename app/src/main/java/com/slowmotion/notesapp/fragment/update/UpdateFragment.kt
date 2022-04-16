@@ -15,11 +15,11 @@ import com.slowmotion.notesapp.data.viewModelsData.NoteViewModel
 import com.slowmotion.notesapp.databinding.FragmentUpdateBinding
 import com.slowmotion.notesapp.fragment.SharedViewModels
 
-class UpdateFragment : Fragment() {
+class UpdateFragment : androidx.fragment.app.Fragment() {
 
-    private val args by navArgs<updateFragmentArgs>()
+    private val args by navArgs<UpdateFragmentArgs>()
     private val mSharedViewModels: SharedViewModels by viewModels()
-    private val mNoteViewModel: NoteViewModel by viewModels()
+    private val mNotesViewModel: NoteViewModel by viewModels()
 
     private var _binding: FragmentUpdateBinding? = null
     private val binding get() = _binding!!
@@ -31,9 +31,7 @@ class UpdateFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentUpdateBinding.inflate(inflater, container, false)
         binding.args = args
-
         binding.spUpdate.onItemSelectedListener = mSharedViewModels.listener
-
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -55,38 +53,40 @@ class UpdateFragment : Fragment() {
             .setTitle("Delete '${args.currentItem.title}' ?")
             .setMessage("Are you sure want to remove '${args.currentItem.title}' ?")
             .setPositiveButton("Yes"){_, _ ->
-                mNoteViewModel.deleteData(args.currentItem)
+                mNotesViewModel.deleteData(args.currentItem)
                 Toast.makeText(
                     requireContext(), "Succesfully Removed : ${args.currentItem.title}",
                     Toast.LENGTH_SHORT
                 ).show()
-                findNavController().navigate(R.id.action_addFragment_to_listFragment)
+                findNavController().navigate(R.id.action_updateFragment_to_listFragment)
             }
             .setNegativeButton("No") {_, _ ->}
             .create()
             .show()
+
     }
 
     private fun updateItem() {
         val title = binding.etUptitle.text.toString()
-        val description = binding.etDescUpdate.toString()
+        val description = binding.etDescUpdate.text.toString()
         val getPriority = binding.spUpdate.selectedItem.toString()
 
         val validation = mSharedViewModels.verifyDataFromUser(title, description)
         if (validation){
             val updateItem = NoteData(
                 args.currentItem.id,
-                title, mSharedViewModels.parsePriority(getPriority),
+                title,
+                mSharedViewModels.parsePriority(getPriority),
                 description
             )
-            mNoteViewModel.updateData(updateItem)
+            mNotesViewModel.updateData(updateItem)
             Toast.makeText(requireContext(), "Berhasil di update", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }else{
             Toast.makeText(requireContext(), "Tolong isi semua persyaratan", Toast.LENGTH_SHORT)
                 .show()
         }
+
     }
+
 }
-
-

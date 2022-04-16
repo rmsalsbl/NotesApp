@@ -13,7 +13,7 @@ import com.slowmotion.notesapp.R
 import com.slowmotion.notesapp.data.model.NoteData
 import com.slowmotion.notesapp.data.model.NoteDatabase
 import com.slowmotion.notesapp.data.model.Priority
-import com.slowmotion.notesapp.fragment.list.listFragmentDirections
+import com.slowmotion.notesapp.fragment.list.ListFragmentDirections
 
 class BindingAdapters {
     companion object{
@@ -23,7 +23,7 @@ class BindingAdapters {
         fun navigateToAddFragment(view: FloatingActionButton, navigate : Boolean){
             view.setOnClickListener{
                 if (navigate){
-                    view.findNavController().navigate(R.id.action_addFragment_to_listFragment)
+                    view.findNavController().navigate(R.id.action_listFragment_to_addFragment)
                 }
             }
         }
@@ -62,7 +62,7 @@ class BindingAdapters {
         @JvmStatic
         fun sendDataToUpdateFragment(view: ConstraintLayout, currentItem: NoteData){
             view.setOnClickListener{
-                val action = listFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+                val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
                 view.findNavController().navigate(action)
             }
         }
